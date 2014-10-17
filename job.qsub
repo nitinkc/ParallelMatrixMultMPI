@@ -1,0 +1,6 @@
+#PBS -N mmMPI
+#PBS -l nodes=6:ppn=4
+
+cd /export/home/nitinc/Assignment3
+
+mpirun -hostfile machine -np 24 matrixMultMPI.o 24 24 24
