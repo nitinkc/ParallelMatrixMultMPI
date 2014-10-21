@@ -1,0 +1,14 @@
+Speed up curve 5000,2000,5000
+
+ ComputaionTime for Linear: 326.438240 milisec
+ ComputaionTime Parallel: 106.138058 milisec
+Speed Up : 1.000000
+ ComputaionTime for Linear: 433.391092 milisec
+ ComputaionTime Parallel: 71.095505 milisec
+Speed Up : 1.000000
+ ComputaionTime for Linear: 442.228209 milisec
+ ComputaionTime Parallel: 94.317926 milisec
+Speed Up : 1.000000
+ ComputaionTime for Linear: 637.627492 milisec
+ ComputaionTime Parallel: 48.843023 milisec
+Speed Up : 1.000000
