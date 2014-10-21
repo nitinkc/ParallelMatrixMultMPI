@@ -1,0 +1,169 @@
+Speed up curve 5000,2000,5000
+
+ ComputaionTime for Linear: 221.109619 milisec
+ ComputaionTime Parallel: 89.540351 sec
+ Communication TIme: 9.086529 sec
+Speed Up : 2.469385 sec
+Granularity : 9.854186
+ ComputaionTime for Linear: 229.252434 milisec
+ ComputaionTime Parallel: 42.423476 sec
+ Communication TIme: 7.771330 sec
+Speed Up : 5.403905 sec
+Granularity : 5.458972
+ ComputaionTime for Linear: 229.761091 milisec
+ ComputaionTime Parallel: 29.125614 sec
+ Communication TIme: 7.435232 sec
+Speed Up : 7.888627 sec
+Granularity : 3.917244
+ ComputaionTime for Linear: 236.008989 milisec
+ ComputaionTime Parallel: 23.368134 sec
+ Communication TIme: 7.271107 sec
+Speed Up : 10.099608 sec
+Granularity : 3.213834
+ ComputaionTime for Linear: 245.195900 milisec
+ ComputaionTime Parallel: 21.540890 sec
+ Communication TIme: 7.159755 sec
+Speed Up : 11.382812 sec
+Granularity : 3.008607
+ ComputaionTime for Linear: 244.496917 milisec
+ ComputaionTime Parallel: 21.961315 sec
+ Communication TIme: 7.111393 sec
+Speed Up : 11.133073 sec
+Granularity : 3.088188Speed up curve 100 60 100
+
+ ComputaionTime for Linear: 0.003946 milisec
+ ComputaionTime Parallel: 0.018260 sec
+ Communication TIme: 0.005478 sec
+Speed Up : 0.216104 sec
+Granularity : 3.333391
+ ComputaionTime for Linear: 0.003930 milisec
+ ComputaionTime Parallel: 0.013627 sec
+ Communication TIme: 0.005192 sec
+Speed Up : 0.288404 sec
+Granularity : 2.624604
+ ComputaionTime for Linear: 0.003930 milisec
+ ComputaionTime Parallel: 0.011682 sec
+ Communication TIme: 0.004498 sec
+Speed Up : 0.336401 sec
+Granularity : 2.597159
+ ComputaionTime for Linear: 0.003353 milisec
+ ComputaionTime Parallel: 0.012208 sec
+ Communication TIme: 0.004261 sec
+Speed Up : 0.274647 sec
+Granularity : 2.865040
+ ComputaionTime for Linear: 0.005201 milisec
+ ComputaionTime Parallel: 0.011925 sec
+ Communication TIme: 0.004207 sec
+Speed Up : 0.436132 sec
+Granularity : 2.834627
+ ComputaionTime for Linear: 0.003928 milisec
+ ComputaionTime Parallel: 0.012049 sec
+ Communication TIme: 0.004486 sec
+Speed Up : 0.325999 sec
+Granularity : 2.685995Speed up curve 500 200 500
+
+ ComputaionTime for Linear: 0.211865 milisec
+ ComputaionTime Parallel: 0.281733 sec
+ Communication TIme: 0.091793 sec
+Speed Up : 0.752006 sec
+Granularity : 3.069219
+ ComputaionTime for Linear: 0.220963 milisec
+ ComputaionTime Parallel: 0.243363 sec
+ Communication TIme: 0.078813 sec
+Speed Up : 0.907956 sec
+Granularity : 3.087852
+ ComputaionTime for Linear: 0.219145 milisec
+ ComputaionTime Parallel: 0.255697 sec
+ Communication TIme: 0.075007 sec
+Speed Up : 0.857050 sec
+Granularity : 3.408966
+ ComputaionTime for Linear: 0.223899 milisec
+ ComputaionTime Parallel: 0.251810 sec
+ Communication TIme: 0.073468 sec
+Speed Up : 0.889158 sec
+Granularity : 3.427481
+ ComputaionTime for Linear: 0.309110 milisec
+ ComputaionTime Parallel: 0.245878 sec
+ Communication TIme: 0.071244 sec
+Speed Up : 1.257169 sec
+Granularity : 3.451210
+ ComputaionTime for Linear: 0.412412 milisec
+ ComputaionTime Parallel: 0.251666 sec
+ Communication TIme: 0.072168 sec
+Speed Up : 1.638727 sec
+Granularity : 3.487220Speed up curve 1000 500 1000
+
+ ComputaionTime for Linear: 2.112556 milisec
+ ComputaionTime Parallel: 1.410582 sec
+ Communication TIme: 0.454354 sec
+Speed Up : 1.497649 sec
+Granularity : 3.104589
+ ComputaionTime for Linear: 2.176224 milisec
+ ComputaionTime Parallel: 0.998286 sec
+ Communication TIme: 0.394588 sec
+Speed Up : 2.179960 sec
+Granularity : 2.529945
+ ComputaionTime for Linear: 2.195377 milisec
+ ComputaionTime Parallel: 1.019773 sec
+ Communication TIme: 0.371976 sec
+Speed Up : 2.152809 sec
+Granularity : 2.741503
+ ComputaionTime for Linear: 2.254284 milisec
+ ComputaionTime Parallel: 0.981898 sec
+ Communication TIme: 0.360042 sec
+Speed Up : 2.295843 sec
+Granularity : 2.727178
+ ComputaionTime for Linear: 2.529583 milisec
+ ComputaionTime Parallel: 0.961409 sec
+ Communication TIme: 0.357326 sec
+Speed Up : 2.631120 sec
+Granularity : 2.690566
+ ComputaionTime for Linear: 3.168090 milisec
+ ComputaionTime Parallel: 0.989205 sec
+ Communication TIme: 0.356790 sec
+Speed Up : 3.202663 sec
+Granularity : 2.772512
+Granularity effect with 24
+
+ ComputaionTime for Linear: 0.003940 milisec
+ ComputaionTime Parallel: 0.011878 sec
+ Communication TIme: 0.004249 sec
+Speed Up : 0.331694 sec
+Granularity : 2.795421
+ ComputaionTime for Linear: 0.384593 milisec
+ ComputaionTime Parallel: 0.252257 sec
+ Communication TIme: 0.072457 sec
+Speed Up : 1.524609 sec
+Granularity : 3.481466
+ ComputaionTime for Linear: 2.568573 milisec
+ ComputaionTime Parallel: 0.989777 sec
+ Communication TIme: 0.357234 sec
+Speed Up : 2.595103 sec
+Granularity : 2.770668
+ ComputaionTime for Linear: 243.553940 milisec
+ ComputaionTime Parallel: 21.965484 sec
+ Communication TIme: 7.112583 sec
+Speed Up : 11.088030 sec
+Granularity : 3.088257
+Granularity effect with 4
+
+ ComputaionTime for Linear: 0.003917 milisec
+ ComputaionTime Parallel: 0.018463 sec
+ Communication TIme: 0.005484 sec
+Speed Up : 0.212151 sec
+Granularity : 3.366664
+ ComputaionTime for Linear: 0.216816 milisec
+ ComputaionTime Parallel: 0.278112 sec
+ Communication TIme: 0.090475 sec
+Speed Up : 0.779600 sec
+Granularity : 3.073914
+ ComputaionTime for Linear: 2.114363 milisec
+ ComputaionTime Parallel: 1.411814 sec
+ Communication TIme: 0.459571 sec
+Speed Up : 1.497621 sec
+Granularity : 3.072027
+ ComputaionTime for Linear: 221.270632 milisec
+ ComputaionTime Parallel: 89.597709 sec
+ Communication TIme: 9.086303 sec
+Speed Up : 2.469601 sec
+Granularity : 9.860744
