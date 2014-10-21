@@ -16,6 +16,7 @@ int main (int argc, char *argv[])
 int numtasks, taskid, numworkers,source,dest,rows,averow, extra, index;
 int i, j, k, rc;
 double startTime, endTime, startTimeLinear, endTimeLinear;           
+double commTimeStart1, commTimeEnd1, commTimeStart2, commTimeEnd2;
 int ROW_A = atoi(argv[1]),
     COL_A = atoi(argv[2]),
     COL_B = atoi(argv[3]);
@@ -76,20 +77,23 @@ numworkers = numtasks-1;
 	if (dest <= extra)
 		rows = averow + 1;
 	else
-		startTime = MPI_Wtime();
+                rows = averow;
 
-		rows = averow;  	
+		startTime = MPI_Wtime();  	
        //  printf("Sending %d rows to task %d index=%d\n",rows,dest,index);
          /*MPI_Send(void* data, int count, MPI_Datatype datatype, int destination,int tag, MPI_Comm communicator)*/
-         MPI_Send(&index, 1, MPI_INT, dest, TAG_MASTER, MPI_COMM_WORLD);
+        commTimeStart1 = MPI_Wtime(); 
+	MPI_Send(&index, 1, MPI_INT, dest, TAG_MASTER, MPI_COMM_WORLD);
          MPI_Send(&rows, 1, MPI_INT, dest, TAG_MASTER, MPI_COMM_WORLD);
          MPI_Send(&a[index][0], rows*COL_A, MPI_DOUBLE, dest, TAG_MASTER,
                    MPI_COMM_WORLD);
          MPI_Send(&b, COL_A*COL_B, MPI_DOUBLE, dest, TAG_MASTER, MPI_COMM_WORLD);
          index = index + rows;
+	commTimeEnd1 = MPI_Wtime();
       }
 
       /* Receive results from worker tasks */
+
       for (i=1; i<=numworkers; i++)
       {
          source = i;
@@ -97,11 +101,9 @@ numworkers = numtasks-1;
          MPI_Recv(&rows, 1, MPI_INT, source, TAG_WORKER, MPI_COMM_WORLD, &status);
          MPI_Recv(&c[index][0], rows*COL_B, MPI_DOUBLE, source, TAG_WORKER, 
                   MPI_COMM_WORLD, &status);
+	
          //printf("Received results from task %d\n",source);
       }
-
-
-
 	  /*
       // Print results
       
@@ -117,10 +119,14 @@ numworkers = numtasks-1;
       printf ("Done.\n");
 */
 
-	  endTime = MPI_Wtime();
-	  printf("\n ComputaionTime Parallel: %f milisec", endTime - startTime);
-	printf("\nSpeed Up : %f\n", (endTimeLinear-startTimeLinear)/(endTime-startTime));
-   }
+	endTime = MPI_Wtime();
+	double commDelay = (commTimeStart2-commTimeEnd2)+(commTimeStart1-commTimeEnd2);
+	double computation = endTime - startTime;
+	printf("\n ComputaionTime Parallel: %f sec", endTime - startTime);
+	printf ("\n Communication TIme: %f sec",commDelay);
+	printf("\nSpeed Up : %f sec", (endTimeLinear-startTimeLinear)/(endTime-startTime));
+	printf("\nGranularity : %f",computation/commDelay);   
+}
 /* worker task ***********/
    if (taskid > MASTER)
    {
@@ -136,9 +142,11 @@ numworkers = numtasks-1;
             for (j=0; j<COL_A; j++)
                c[i][k] = c[i][k] + a[i][j] * b[j][k];
          }
+	commTimeStart2 = MPI_Wtime();
       MPI_Send(&index, 1, MPI_INT, MASTER, TAG_WORKER, MPI_COMM_WORLD);
       MPI_Send(&rows, 1, MPI_INT, MASTER, TAG_WORKER, MPI_COMM_WORLD);
       MPI_Send(&c, rows*COL_B, MPI_DOUBLE, MASTER, TAG_WORKER, MPI_COMM_WORLD);
+	commTimeEnd2 = MPI_Wtime();
    }
    MPI_Finalize();
 
