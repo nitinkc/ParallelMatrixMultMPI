@@ -4,6 +4,8 @@
 #include "mpi.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
                
 #define MASTER 0              
 #define TAG_MASTER 1      
@@ -12,22 +14,16 @@
 
 int main (int argc, char *argv[])
 {
-int numtasks,           /* number of tasks in partition */
-	taskid,                
-	numworkers,           /* number of worker tasks */
-	source,                
-	dest,                  
-	rows,                 /* rows of matrix A sent to each worker */
-	averow, extra, index, /* used to determine rows sent to each worker */
-	i, j, k, rc;
-           
+int numtasks, taskid, numworkers,source,dest,rows,averow, extra, index;
+int i, j, k, rc;
+double startTime, endTime;           
 int ROW_A = atoi(argv[1]),
     COL_A = atoi(argv[2]),
     COL_B = atoi(argv[3]);
 
 double	a[ROW_A][COL_A], /* Declare the MAtrices*/
-	      b[COL_A][COL_B],
-	      c[ROW_A][COL_B]; 
+	b[COL_A][COL_B],
+	c[ROW_A][COL_B]; 
 
 if(argc<=3) { /* Testing the correct arguments passed */
         printf("Feed 3 arguments,ROW_A, COL_A, COL_B.. I will die now :( ..");
@@ -46,12 +42,11 @@ if (numtasks < 2 ) {
   }
 numworkers = numtasks-1;
 
-
 // master task
    if (taskid == MASTER)//initialize the arrays
    {
-      printf("multiplication has started with %d tasks.\n",numtasks);
-      printf("Initializing arrays...\n");
+     // printf("multiplication has started with %d tasks.\n",numtasks);
+     // printf("Initializing arrays...\n");
       for (i=0; i<ROW_A; i++)
          for (j=0; j<COL_A; j++)
             a[i][j]= ((double)rand()/(double)MAXRAND);
@@ -69,8 +64,10 @@ numworkers = numtasks-1;
 	if (dest <= extra)
 		rows = averow + 1;
 	else
+		startTime = MPI_Wtime();
+
 		rows = averow;  	
-         printf("Sending %d rows to task %d index=%d\n",rows,dest,index);
+       //  printf("Sending %d rows to task %d index=%d\n",rows,dest,index);
          /*MPI_Send(void* data, int count, MPI_Datatype datatype, int destination,int tag, MPI_Comm communicator)*/
          MPI_Send(&index, 1, MPI_INT, dest, TAG_MASTER, MPI_COMM_WORLD);
          MPI_Send(&rows, 1, MPI_INT, dest, TAG_MASTER, MPI_COMM_WORLD);
@@ -88,10 +85,13 @@ numworkers = numtasks-1;
          MPI_Recv(&rows, 1, MPI_INT, source, TAG_WORKER, MPI_COMM_WORLD, &status);
          MPI_Recv(&c[index][0], rows*COL_B, MPI_DOUBLE, source, TAG_WORKER, 
                   MPI_COMM_WORLD, &status);
-         printf("Received results from task %d\n",source);
+         //printf("Received results from task %d\n",source);
       }
 
-      /* Print results */
+
+
+	  /*
+      // Print results
       
 	printf("******************************************************\n");
       printf("Result Matrix:\n");
@@ -103,9 +103,11 @@ numworkers = numtasks-1;
       }
       printf("\n******************************************************\n");
       printf ("Done.\n");
+*/
 
+	  endTime = MPI_Wtime();
+	  printf("\n ComputaionTime: %f milisec", endTime - startTime);
    }
-
 /* worker task ***********/
    if (taskid > MASTER)
    {
@@ -126,4 +128,6 @@ numworkers = numtasks-1;
       MPI_Send(&c, rows*COL_B, MPI_DOUBLE, MASTER, TAG_WORKER, MPI_COMM_WORLD);
    }
    MPI_Finalize();
+
+
 }

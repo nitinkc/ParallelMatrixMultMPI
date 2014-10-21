@@ -1,6 +1,36 @@
 #PBS -N mmMPI
 #PBS -l nodes=6:ppn=4
+#PBS -j oe
+#PBS -o matrix.txt
 
+exec1="./matrixMultMPI.o 100 60 100"
+exec2="./matrixMultMPI.o 500 200 500"
+exec3="./matrixMultMPI.o 1000 500 1000"
+exec4="./matrixMultMPI.o 5000 2000 5000"
+ 
 cd /export/home/nitinc/Assignment3
 
-mpirun -hostfile machine -np 24 matrixMultMPI.o 24 24 24
+echo =================================================
+echo MPI PARALLEL MATRIX A 100,60 X 60,100
+echo =================================================
+mpirun -hostfile machine -np 24 exec1
+
+
+echo =================================================
+echo MPI PARALLEL MATRIX A 500,200 X 200,500
+echo =================================================
+mpirun -hostfile machine -np 24 exec2
+
+
+echo =================================================
+echo MPI PARALLEL MATRIX A 1000,500 X 500,1000
+echo =================================================
+mpirun -hostfile machine -np 24 exec3
+
+
+echo =================================================
+echo MPI PARALLEL MATRIX A 5000,2000 X 2000,5000
+echo =================================================
+mpirun -hostfile machine -np 24 exec4
+
+

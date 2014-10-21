@@ -1,0 +1,39 @@
+Speed up curve (5000,2000 X 2000,5000))
+
+np = 4
+ ComputaionTime: 88.826647 milisec
+
+np=8 
+ ComputaionTime: 67.504630 milisec
+
+mp=12 
+ComputaionTime: 48.465842 milisec
+ 
+np=16
+ComputaionTime: 23.284127 milisec
+
+np=20
+ ComputaionTime: 24.729520 milisec
+
+mr = 24
+ ComputaionTime: 21.245032 milisec
+
+Granularity effect with np = 24
+Size 100,60 X 60,100
+ ComputaionTime: 0.012144 milisec
+Size 500,200 X 200,500
+ ComputaionTime: 0.243516 milisec
+Size 1000,500 X 500,1000
+ ComputaionTime: 1.032732 milisec
+Size 5000,2000 X 2000,5000
+ ComputaionTime: 23.749935 milisec
+
+Granularity effect with np = 4
+Size 100,60 X 60,100
+ ComputaionTime: 0.018386 milisec
+Size 500,200 X 200,500
+ ComputaionTime: 0.281080 milisec
+Size 1000,500 X 500,1000
+ ComputaionTime: 1.409688 milisec
+Size 5000,2000 X 2000,5000
+ ComputaionTime: 88.754270 milisec
