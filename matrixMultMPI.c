@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
                
 #define MASTER 0              
 #define TAG_MASTER 1      
@@ -16,7 +15,7 @@ int main (int argc, char *argv[])
 {
 int numtasks, taskid, numworkers,source,dest,rows,averow, extra, index;
 int i, j, k, rc;
-double startTime, endTime;           
+double startTime, endTime, startTimeLinear, endTimeLinear;           
 int ROW_A = atoi(argv[1]),
     COL_A = atoi(argv[2]),
     COL_B = atoi(argv[3]);
@@ -54,7 +53,20 @@ numworkers = numtasks-1;
          for (j=0; j<COL_B; j++)
             b[i][j]= ((double)rand()/(double)MAXRAND);;
 
-      /* Send matrix data to the worker tasks */
+	/* Linear Execution of Matrix Multiplication by Master*/
+	startTimeLinear = MPI_Wtime();
+     for (k=0; k<ROW_A; k++){
+         for (i=0; i<COL_B; i++)
+         {
+            c[i][k] = 0.0;
+            for (j=0; j<COL_A; j++)
+               c[i][k] = c[i][k] + a[i][j] * b[j][k];
+         }
+	}
+ 	endTimeLinear = MPI_Wtime();
+        printf("\n ComputaionTime for Linear: %f milisec", endTimeLinear - startTimeLinear);
+      
+	/* Send matrix data to the worker tasks */
       averow = ROW_A/numworkers;
       extra = ROW_A%numworkers;
 
@@ -106,7 +118,8 @@ numworkers = numtasks-1;
 */
 
 	  endTime = MPI_Wtime();
-	  printf("\n ComputaionTime: %f milisec", endTime - startTime);
+	  printf("\n ComputaionTime Parallel: %f milisec", endTime - startTime);
+	printf("\nSpeed Up : %f", endTimeLinear/endTime);
    }
 /* worker task ***********/
    if (taskid > MASTER)
