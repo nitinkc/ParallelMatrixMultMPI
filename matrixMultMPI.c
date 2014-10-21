@@ -120,7 +120,7 @@ numworkers = numtasks-1;
 */
 
 	endTime = MPI_Wtime();
-	double commDelay = (commTimeStart2-commTimeEnd2)+(commTimeStart1-commTimeEnd2);
+	double commDelay = (commTimeEnd2-commTimeStart2)+(commTimeEnd1-commTimeStart1);
 	double computation = endTime - startTime;
 	printf("\n ComputaionTime Parallel: %f sec", endTime - startTime);
 	printf ("\n Communication TIme: %f sec",commDelay);
