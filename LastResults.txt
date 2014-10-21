@@ -1,0 +1,136 @@
+Speed up curve 5000,2000,5000
+
+ ComputaionTime for Linear: 224.400268 milisec
+ ComputaionTime Parallel: 87.690390 milisec
+Speed Up : 2.559006
+
+ ComputaionTime for Linear: 232.223159 milisec
+ ComputaionTime Parallel: 41.542063 milisec
+Speed Up : 5.590073
+
+ ComputaionTime for Linear: 233.161702 milisec
+ ComputaionTime Parallel: 28.553238 milisec
+Speed Up : 8.165859
+
+ ComputaionTime for Linear: 239.210260 milisec
+ ComputaionTime Parallel: 22.963937 milisec
+Speed Up : 10.416779
+
+ ComputaionTime for Linear: 248.008084 milisec
+ ComputaionTime Parallel: 21.533579 milisec
+Speed Up : 11.517272
+
+ ComputaionTime for Linear: 252.544386 milisec
+ ComputaionTime Parallel: 21.934808 milisec
+Speed Up : 11.513408
+Speed up curve 100 60 100
+
+ ComputaionTime for Linear: 0.003702 milisec
+ ComputaionTime Parallel: 0.018184 milisec
+Speed Up : 0.203582
+
+ ComputaionTime for Linear: 0.003682 milisec
+ ComputaionTime Parallel: 0.013543 milisec
+Speed Up : 0.271869
+
+ ComputaionTime for Linear: 0.003698 milisec
+ ComputaionTime Parallel: 0.012036 milisec
+Speed Up : 0.307258
+
+ ComputaionTime for Linear: 0.003225 milisec
+ ComputaionTime Parallel: 0.010510 milisec
+Speed Up : 0.306860
+
+ ComputaionTime for Linear: 0.006328 milisec
+ ComputaionTime Parallel: 0.012059 milisec
+Speed Up : 0.524763
+
+ ComputaionTime for Linear: 0.003679 milisec
+ ComputaionTime Parallel: 0.011911 milisec
+Speed Up : 0.308879
+Speed up curve 500 200 500
+
+ ComputaionTime for Linear: 0.210755 milisec
+ ComputaionTime Parallel: 0.280383 milisec
+Speed Up : 0.751668
+
+ ComputaionTime for Linear: 0.207763 milisec
+ ComputaionTime Parallel: 0.243784 milisec
+Speed Up : 0.852242
+
+ ComputaionTime for Linear: 0.218308 milisec
+ ComputaionTime Parallel: 0.254675 milisec
+Speed Up : 0.857202
+
+ ComputaionTime for Linear: 0.212325 milisec
+ ComputaionTime Parallel: 0.242787 milisec
+Speed Up : 0.874532
+
+ ComputaionTime for Linear: 0.216449 milisec
+ ComputaionTime Parallel: 0.241221 milisec
+Speed Up : 0.897306
+
+ ComputaionTime for Linear: 0.218729 milisec
+ ComputaionTime Parallel: 0.245054 milisec
+Speed Up : 0.892575
+Speed up curve 1000 500 1000
+
+ ComputaionTime for Linear: 2.124555 milisec
+ ComputaionTime Parallel: 1.389691 milisec
+Speed Up : 1.528797
+
+ ComputaionTime for Linear: 2.197823 milisec
+ ComputaionTime Parallel: 0.995388 milisec
+Speed Up : 2.208006
+
+ ComputaionTime for Linear: 2.209087 milisec
+ ComputaionTime Parallel: 1.015166 milisec
+Speed Up : 2.176084
+
+ ComputaionTime for Linear: 2.250878 milisec
+ ComputaionTime Parallel: 0.978531 milisec
+Speed Up : 2.300262
+
+ ComputaionTime for Linear: 2.256879 milisec
+ ComputaionTime Parallel: 0.960767 milisec
+Speed Up : 2.349039
+
+ ComputaionTime for Linear: 2.306435 milisec
+ ComputaionTime Parallel: 0.980547 milisec
+Speed Up : 2.352192
+
+Granularity effect with 24
+
+ ComputaionTime for Linear: 0.003704 milisec
+ ComputaionTime Parallel: 0.011892 milisec
+Speed Up : 0.311474
+
+ ComputaionTime for Linear: 0.403800 milisec
+ ComputaionTime Parallel: 0.243604 milisec
+Speed Up : 1.657609
+
+ ComputaionTime for Linear: 2.260869 milisec
+ ComputaionTime Parallel: 0.981057 milisec
+Speed Up : 2.304524
+
+ ComputaionTime for Linear: 254.312939 milisec
+ ComputaionTime Parallel: 21.935152 milisec
+Speed Up : 11.593853
+
+Granularity effect with 4
+
+ ComputaionTime for Linear: 0.003683 milisec
+ ComputaionTime Parallel: 0.018324 milisec
+Speed Up : 0.200999
+
+ ComputaionTime for Linear: 0.217776 milisec
+ ComputaionTime Parallel: 0.280332 milisec
+Speed Up : 0.776850
+
+ ComputaionTime for Linear: 2.127194 milisec
+ ComputaionTime Parallel: 1.390160 milisec
+Speed Up : 1.530179
+
+ ComputaionTime for Linear: 224.227970 milisec
+ ComputaionTime Parallel: 87.588760 milisec
+Speed Up : 2.560009

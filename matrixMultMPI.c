@@ -119,7 +119,7 @@ numworkers = numtasks-1;
 
 	  endTime = MPI_Wtime();
 	  printf("\n ComputaionTime Parallel: %f milisec", endTime - startTime);
-	printf("\nSpeed Up : %f", endTimeLinear/endTime);
+	printf("\nSpeed Up : %f\n", (endTimeLinear-startTimeLinear)/(endTime-startTime));
    }
 /* worker task ***********/
    if (taskid > MASTER)
